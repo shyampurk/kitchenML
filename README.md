@@ -54,5 +54,5 @@ KitchenMLTest.py : No arguments. Note that this program will take a very long ti
 
 KitchenMLTestAIC.py : No arguments. Based on the prior observation obtained from executing KitchenMLTest.py, this program executes the best and worst performing model variant and displays the AIC metrics.
 
-All programs have been tested be executing through the scipy IDE under Anaconda 3 on Windows.
+All programs have been tested be executing through the spyder IDE under Anaconda 3 on Windows.
 
