@@ -7,7 +7,7 @@ from sklearn.metrics import mean_squared_error
 import math
 import numpy as np
 import matplotlib
-matplotlib.use('GTKAgg')
+#matplotlib.use('GTKAgg')
 import matplotlib.pyplot as plt
 from sklearn import linear_model
 import pandas as pd
@@ -18,7 +18,7 @@ import os.path
 
 
 container_capacity = 25
-historical_pizza_sales_data = 'recom_train_doubled.csv'
+historical_pizza_sales_data = 'data/recom_train.csv'
 
 model = None
 model_fit = None
@@ -152,16 +152,16 @@ a=sys.argv[1]
 print(int(a))
 
 if a=="1":
-    df = pd.read_csv("noti_p.csv")
-    print("P")
+    df = pd.read_csv("data/noti_p.csv")
+    print("Executing Scenario 1 - Stock will last almost till the end of day")
 elif a=="2":
-    df = pd.read_csv("noti_n.csv")
-    print("N")
+    df = pd.read_csv("data/noti_n.csv")
+    print("Executing Scenario 2 - Stock will not last till the end of day")
 elif a=="3":
-    df = pd.read_csv("noti_c.csv") 
-    print("C")
+    df = pd.read_csv("data/noti_c.csv") 
+    print("Executing Scenario 3 - Stock will be surplus at the end of the day")
 else:
-    print("Enter Valid argumet - 1,2 or 3")
+    print("Invalid Scenario. Enter Valid argumet - 1,2 or 3 for scenario no.")
     sys.exit()
     
     
@@ -171,8 +171,8 @@ Y = df['Kgs']
 X = df['time']
  
 #Reshape the data by ignoring the first row
-X=X.reshape(len(X),1)
-Y=Y.reshape(len(Y),1)
+X=X.values.reshape(len(X),1)
+Y=Y.values.reshape(len(Y),1)
  
 #Take the data samples from 1st to 7th ( ignore the zreoth sample as it is the label)
 X_train = X[1:7]
@@ -220,4 +220,4 @@ elif (predicted_value>container_capacity_5pc) and (predicted_value<container_cap
     print("Order after 5 PM")
     generateRecommendation()
 else:
-    print("Mozzarella Bufala Cheese is sufficient")
+    print("Mozzarella Cheese is well stocked for today")
