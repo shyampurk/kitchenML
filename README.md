@@ -1,6 +1,6 @@
 # Using Machine Learning to Predict Kitchen Inventory Supplies
 
-This repository contains the accompanying source code for [this](http://radiostud.io/applying-ai-food-industry-to-streamline-process-workflow/) blog post.
+This repository contains the accompanying source code for [this](http://radiostud.io/applying-ai-food-industry-to-streamline-supply-chain-workflow/) blog post.
 
 Read the post carefully to understand the story and the scenario for applying predictions for a restaurant's kitchen supplies.
 
