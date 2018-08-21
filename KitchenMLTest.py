@@ -74,7 +74,7 @@ def evaluate_models(dataset, p_values, d_values, q_values):
 def parser(x):
 	return datetime.strptime(x, '%Y-%m-%d')
 
-series = read_csv('recom_train.csv', header=0, parse_dates=[0], index_col=0, squeeze=True, date_parser=parser)
+series = read_csv('data/recom_train.csv', header=0, parse_dates=[0], index_col=0, squeeze=True, date_parser=parser)
 
 # evaluate parameters
 p_values = range(0,13)
